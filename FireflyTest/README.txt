@@ -14,6 +14,7 @@ Prerequisites:
 4.	This Test needs to be written in C#.
 5.	Take approximately an hour to complete it.
 6.  Use git to show your working...
+7.  If you get an error about "****chmod****"  - running VS as administrator fixes this.
 
 
 Test case[s] to automate
