@@ -7,12 +7,12 @@ namespace FireflyTest.Specs
     [Binding, Scope(Tag = "loginTests")]
     public class CommonStepDefinitions
     {
-        private static LoginPage loginPage;
-        private static DashboardPage dashboardPage;
-        private static Driver driver;
+        private LoginPage loginPage;
+        private DashboardPage dashboardPage;
+        private Driver driver;
 
         [BeforeScenario("loginTests")]
-        public static void Before()
+        public void Before()
         {
             driver = new Driver();
             loginPage = new LoginPage(driver);
@@ -20,7 +20,7 @@ namespace FireflyTest.Specs
         }
 
         [AfterScenario("loginTests")]
-        public static void After()
+        public void After()
         {
             driver.logout();
 

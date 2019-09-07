@@ -8,12 +8,12 @@ namespace FireflyTest.StepDefinitions
     [Binding, Scope(Tag = "editTaskTests")]
     public class EditTaskSteps
     {
-        private static LoginPage loginPage;
-        private static DashboardPage dashboardPage;
-        private static Driver driver;
+        private LoginPage loginPage;
+        private DashboardPage dashboardPage;
+        private Driver driver;
 
         [BeforeScenario("editTaskTests")]
-        public static void Before()
+        public void Before()
         {
             driver = new Driver();
             loginPage = new LoginPage(driver);
@@ -23,7 +23,7 @@ namespace FireflyTest.StepDefinitions
         }
 
         [AfterScenario("editTaskTests")]
-        public static void After()
+        public void After()
         {
             driver.logout();
 
