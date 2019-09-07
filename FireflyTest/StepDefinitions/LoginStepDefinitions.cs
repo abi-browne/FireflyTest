@@ -1,30 +1,29 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using FireflyTest.PageObjects;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 
 namespace FireflyTest.Specs
 {
-    [Binding]
+    [Binding, Scope(Tag = "loginTests")]
     public class CommonStepDefinitions
     {
-        private LoginPage loginPage;
-        private DashboardPage dashboardPage;
-        private Driver driver;
+        private static LoginPage loginPage;
+        private static DashboardPage dashboardPage;
+        private static Driver driver;
 
-        [BeforeScenario]
-        public void Before()
+        [BeforeScenario("loginTests")]
+        public static void Before()
         {
             driver = new Driver();
             loginPage = new LoginPage(driver);
             dashboardPage = new DashboardPage(driver);
         }
 
-        [AfterScenario]
-        public void After()
+        [AfterScenario("loginTests")]
+        public static void After()
         {
+            driver.logout();
+
             if (driver != null)
             {
                 driver.Quit(); 

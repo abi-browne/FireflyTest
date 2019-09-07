@@ -14,6 +14,7 @@ namespace FireflyTest.PageObjects
 
         By loc_SetANewTaskButton = By.XPath("//*[@data-testid='set-a-new-task']");
         By loc_LoggedInNameField = By.XPath("//*[@data-testid='terry-teacher']");
+        By loc_TaskButton = By.CssSelector(".ff-mainnav-tasks > a:nth-child(1)");
 
         public bool SetNewTaskButtonVisible()
         {
@@ -23,6 +24,11 @@ namespace FireflyTest.PageObjects
         public string GetLoggedInFieldName()
         {
             return driver.findElement(loc_LoggedInNameField).GetAttribute("aria-label");
+        }
+
+        public void ClickTasks()
+        {
+            driver.findElement(loc_TaskButton).Click();
         }
     }
 }

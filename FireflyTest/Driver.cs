@@ -22,4 +22,9 @@ public class Driver
     {
         return driver.FindElement(by);
     }
+
+    public void logout()
+    {
+        driver.Navigate().GoToUrl("https://fireflyautotest.staging.fireflysolutions.co.uk/logout");
+    }
 }
