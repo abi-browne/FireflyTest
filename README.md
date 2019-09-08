@@ -16,11 +16,13 @@ Improvement points:
   - Feature Files ideally should be in a different project to the test code.
   - Page Objects can be put into an Object Bucket for their reference, e.g. A class used by all Step Definitions with all references to pages:
   
-      public class Pages {
+      public class Pages 
       
+      {
+    
         public DashboardPage dashboardPage { get; set; };
         
-        public EditTaskPage editTaskPage { get; set; {;
+        public EditTaskPage editTaskPage { get; set; };
         
         ...
         
