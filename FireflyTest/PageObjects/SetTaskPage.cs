@@ -36,19 +36,17 @@ namespace FireflyTest.PageObjects
         public bool ClickListItem(string name)
         {
             IWebElement taskName = GetListItem(name);
-            if (taskName != null)
-            {
+            if (taskName != null) {
                 taskName.Click();
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
 
         private IWebElement GetListItem(string name)
         {
+            // notDone is set to false when the next button is no longer enabled.
             bool notDone = true;
             while (notDone)
             {
@@ -56,8 +54,11 @@ namespace FireflyTest.PageObjects
                 {
                     Thread.Sleep(2500);
 
+                    // Get all the Task Names that are on the current screen.
                     IReadOnlyCollection<IWebElement> elementsList = driver.FindElements(loc_taskList);
 
+                    // For each Task Name in the Task Name list, determine if one matches the name we are looking for.
+                    // If it does match, then return the IWebElement for it.
                     foreach (IWebElement taskName in elementsList)
                     {
                         if (taskName.GetAttribute("text").Equals(name))
