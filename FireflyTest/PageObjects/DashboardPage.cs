@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 
 namespace FireflyTest.PageObjects
 {
@@ -18,17 +17,17 @@ namespace FireflyTest.PageObjects
 
         public bool SetNewTaskButtonVisible()
         {
-            return driver.findElement(loc_SetANewTaskButton).Displayed;
+            return driver.FindElement(loc_SetANewTaskButton).Displayed;
         }
 
         public string GetLoggedInFieldName()
         {
-            return driver.findElement(loc_LoggedInNameField).GetAttribute("aria-label");
+            return driver.FindElement(loc_LoggedInNameField).GetAttribute("aria-label");
         }
 
         public void ClickTasks()
         {
-            driver.findElement(loc_TaskButton).Click();
+            driver.FindElement(loc_TaskButton).Click();
         }
     }
 }

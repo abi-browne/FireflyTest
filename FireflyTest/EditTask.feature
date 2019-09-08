@@ -8,7 +8,7 @@
 Scenario: Edit Task
 	Given I click on Tasks on the Dashboard
 		And I filter the list by "All"
-		And I click on "Automation Task Test"
+		And I click on "Automation Test Task"
 		And I click on Task Overview
-	When I Edit the task name to "Automation Task-Edited"
+	When I Edit the task name to "Automation Test Task-Edited"
 	Then the task name is successfully updated

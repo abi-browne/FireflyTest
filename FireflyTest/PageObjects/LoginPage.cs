@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 
 namespace FireflyTest.PageObjects
 {
@@ -19,18 +18,18 @@ namespace FireflyTest.PageObjects
         public void PopulateLogin(string user, string pwd)
         {
             // Clear and Populate the User Name Field
-            driver.findElement(loc_UserNameField).Clear();
-            driver.findElement(loc_UserNameField).SendKeys(user);
+            driver.FindElement(loc_UserNameField).Clear();
+            driver.FindElement(loc_UserNameField).SendKeys(user);
 
             // Clear and Populate the Password Field
-            driver.findElement(loc_PasswordField).Clear();
-            driver.findElement(loc_PasswordField).SendKeys(pwd);
+            driver.FindElement(loc_PasswordField).Clear();
+            driver.FindElement(loc_PasswordField).SendKeys(pwd);
         }
 
         public void ClickLogin()
         {
             // Click the Login Button
-            driver.findElement(loc_LoginButton).Click();
+            driver.FindElement(loc_LoginButton).Click();
         }
     }
 }
