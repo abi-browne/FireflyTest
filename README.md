@@ -15,9 +15,15 @@ Improvement points:
 2) File Structure:
   - Feature Files ideally should be in a different project to the test code.
   - Page Objects can be put into an Object Bucket for their reference, e.g. A class used by all Step Definitions with all references to pages:
+  
       public class Pages {
+      
         public DashboardPage dashboardPage { get; set; };
+        
         public EditTaskPage editTaskPage { get; set; {;
+        
         ...
+        
       }
+      
     - These can then be ferenced in spec files as: pages.dashboardPage.method();
